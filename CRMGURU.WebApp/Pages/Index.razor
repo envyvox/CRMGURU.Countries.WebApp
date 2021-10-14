@@ -1,0 +1,160 @@
+﻿@page "/"
+@inject HttpClient _http;
+@inject ISnackbar _snackbar;
+
+<MudGrid Justify="Justify.Center" Class="px-4 py-2 mt-5">
+    <MudItem xs="7">
+        <MudTextField
+            T="string"
+            Variant="Variant.Filled"
+            Label="Find a country by name"
+            ValueChanged="SearchCountry"/>
+    </MudItem>
+    <MudItem xs="7">
+        @if (_displayFoundedCountry)
+        {
+            <MudCard>
+                <MudCardHeader>
+                    <MudText Typo="Typo.h3">@_foundedCountry.Name</MudText>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText>
+                        <b>Code:</b> @_foundedCountry.Code
+                    </MudText>
+                    <MudText>
+                        <b>Area:</b> @_foundedCountry.Area
+                    </MudText>
+                    <MudText>
+                        <b>Population:</b> @_foundedCountry.Population
+                    </MudText>
+                    <MudText>
+                        <b>Capital:</b> @_foundedCountry.Capital.Name
+                    </MudText>
+                    <MudText>
+                        <b>Region:</b> @_foundedCountry.Region.Name
+                    </MudText>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton
+                        Variant="Variant.Filled"
+                        Color="Color.Primary"
+                        Disabled="_foundedCountry.Id != Guid.Empty"
+                        OnClick="SaveToDatabase">
+                        Add to database
+                    </MudButton>
+                </MudCardActions>
+            </MudCard>
+        }
+    </MudItem>
+</MudGrid>
+<MudGrid Justify="Justify.Center" Class="px-4 py-2 mt-5">
+    <MudItem xs="7">
+        <MudButton
+            Variant="Variant.Filled"
+            Color="Color.Primary"
+            OnClick="ToggleCountries">
+            Display countries in database
+        </MudButton>
+        @if (_displayCountries)
+        {
+            @if (_countries.Any())
+            {
+                <MudTable Items="_countries">
+                    <HeaderContent>
+                        <MudTh>Name</MudTh>
+                        <MudTh>Code</MudTh>
+                        <MudTh>Area</MudTh>
+                        <MudTh>Population</MudTh>
+                        <MudTh>Capital</MudTh>
+                        <MudTh>Region</MudTh>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd DataLabel="Name">@context.Name</MudTd>
+                        <MudTd DataLabel="Code">@context.Code</MudTd>
+                        <MudTd DataLabel="Area">@context.Area</MudTd>
+                        <MudTd DataLabel="Population">@context.Population</MudTd>
+                        <MudTd DataLabel="Capital">@context.Capital.Name</MudTd>
+                        <MudTd DataLabel="Region">@context.Region.Name</MudTd>
+                    </RowTemplate>
+                </MudTable>
+            }
+            else
+            {
+                <MudText Class="mt-5" Color="Color.Error">
+                    You have not added any countries to the database
+                </MudText>
+            }
+        }
+    </MudItem>
+</MudGrid>
+
+@code
+{
+    private bool _displayCountries;
+    private bool _displayFoundedCountry;
+    private CountryClient _countryClient;
+    private ICollection<CountryDto> _countries;
+    private CountryDto _foundedCountry;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _countryClient = new CountryClient(_http);
+        _countries = await _countryClient.GetCountriesAsync();
+    }
+
+    private void ToggleCountries()
+    {
+        _displayCountries = !_displayCountries;
+    }
+
+    private async Task SearchCountry(string countryName)
+    {
+        if (string.IsNullOrEmpty(countryName))
+        {
+            _displayFoundedCountry = false;
+            return;
+        }
+
+        try
+        {
+            _foundedCountry = await _countryClient.GetCountryByNameAsync(countryName);
+            _displayFoundedCountry = true;
+        }
+        catch (ApiException e)
+        {
+            _snackbar.Add(e.Response);
+        }
+        catch (Exception e)
+        {
+            _snackbar.Add(e.Message);
+        }
+    }
+
+    private async Task SaveToDatabase()
+    {
+        try
+        {
+            _foundedCountry = await _countryClient.CreateCountryAsync(new CreateCountryCommand
+            {
+                Name = _foundedCountry.Name,
+                Code = _foundedCountry.Code,
+                Area = _foundedCountry.Area,
+                Population = _foundedCountry.Population,
+                CapitalName = _foundedCountry.Capital.Name,
+                RegionName = _foundedCountry.Region.Name
+            });
+
+            _countries.Add(_foundedCountry);
+
+            _snackbar.Add("Country added to database.");
+        }
+        catch (ApiException e)
+        {
+            _snackbar.Add(e.Response);
+        }
+        catch (Exception e)
+        {
+            _snackbar.Add(e.Message);
+        }
+    }
+}
