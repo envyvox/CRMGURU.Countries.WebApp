@@ -1,0 +1,15 @@
+﻿{
+  "profiles": {
+    "CRMGURU.Api": {
+      "commandName": "Project",
+      "dotnetRunMessages": "true",
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CUSTOMCONNSTR_main": "Server=localhost;Database=master;Trusted_Connection=True;",
+        "RestCountries__BaseUrl": "https://restcountries.com/v3.1/"
+      }
+    }
+  }
+}
