@@ -1,0 +1,15 @@
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\bin\Debug\net5.0\CRMGURU.Data.deps.json
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\bin\Debug\net5.0\CRMGURU.Data.runtimeconfig.json
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\bin\Debug\net5.0\CRMGURU.Data.runtimeconfig.dev.json
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\bin\Debug\net5.0\CRMGURU.Data.dll
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\bin\Debug\net5.0\ref\CRMGURU.Data.dll
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\bin\Debug\net5.0\CRMGURU.Data.pdb
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\obj\Debug\net5.0\CRMGURU.Data.csproj.AssemblyReference.cache
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\obj\Debug\net5.0\CRMGURU.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\obj\Debug\net5.0\CRMGURU.Data.AssemblyInfoInputs.cache
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\obj\Debug\net5.0\CRMGURU.Data.AssemblyInfo.cs
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\obj\Debug\net5.0\CRMGURU.Data.csproj.CoreCompileInputs.cache
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\obj\Debug\net5.0\CRMGURU.Data.dll
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\obj\Debug\net5.0\ref\CRMGURU.Data.dll
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\obj\Debug\net5.0\CRMGURU.Data.pdb
+D:\Development\CRMGURU.WebApp\CRMGURU.Data\obj\Debug\net5.0\CRMGURU.Data.genruntimeconfig.cache

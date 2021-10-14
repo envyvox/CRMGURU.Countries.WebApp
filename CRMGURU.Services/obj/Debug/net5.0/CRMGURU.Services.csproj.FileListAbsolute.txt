@@ -1,0 +1,15 @@
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\bin\Debug\net5.0\CRMGURU.Services.deps.json
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\bin\Debug\net5.0\CRMGURU.Services.dll
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\bin\Debug\net5.0\ref\CRMGURU.Services.dll
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\bin\Debug\net5.0\CRMGURU.Services.pdb
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\bin\Debug\net5.0\CRMGURU.Data.dll
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\bin\Debug\net5.0\CRMGURU.Data.pdb
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\obj\Debug\net5.0\CRMGURU.Services.csproj.AssemblyReference.cache
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\obj\Debug\net5.0\CRMGURU.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\obj\Debug\net5.0\CRMGURU.Services.AssemblyInfoInputs.cache
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\obj\Debug\net5.0\CRMGURU.Services.AssemblyInfo.cs
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\obj\Debug\net5.0\CRMGURU.Services.csproj.CoreCompileInputs.cache
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\obj\Debug\net5.0\CRMGURU.Services.csproj.CopyComplete
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\obj\Debug\net5.0\CRMGURU.Services.dll
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\obj\Debug\net5.0\ref\CRMGURU.Services.dll
+D:\Development\CRMGURU.WebApp\CRMGURU.Services\obj\Debug\net5.0\CRMGURU.Services.pdb
